@@ -27,15 +27,27 @@ public class OperacionesEstudiantes {
     public void establecerPromedioEdades(){
         double suma = 0;
         for(Persona e: obtenerEstudiante()){
-            suma = e.obtenerEdad();
+            suma = suma +  e.obtenerEdad();
         }
         promedioEdades = suma/obtenerEstudiante().size();
     }
     
     public double obtenerPromedioEdades(){
-        
         return promedioEdades;
     }
-    
-    
-}
+
+     @Override
+    public String toString() {
+        String reporte = ("Operaciones Estudiante\n");
+        for (int i = 0; i < estudiantes.size(); i++){
+            reporte = String.format("%sEstudiante: %s\n",reporte,
+            obtenerEstudiante().get(i).obtenerNombre());
+    }
+        
+        reporte = String.format("%sPromedio Edades: %s\n"
+                ,reporte,
+                obtenerPromedioEdades());
+        return reporte;
+
+    }
+        }
