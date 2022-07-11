@@ -20,4 +20,8 @@ public class APIAmazonMovie implements APIMovie{
         return apiKey;
     }
     
+    public String toString(){
+        return String.format("Amazon: %s",obtenerApiKey());
+    }
+    
 }

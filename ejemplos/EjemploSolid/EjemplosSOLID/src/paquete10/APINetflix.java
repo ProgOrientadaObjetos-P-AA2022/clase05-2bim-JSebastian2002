@@ -19,5 +19,8 @@ public class APINetflix implements APIMovie{
     public String obtenerApiKey(){
         return apiKey;
     }
+    public String toString(){
+        return String.format("Netflix: %s",obtenerApiKey());
+    }
     
 }
